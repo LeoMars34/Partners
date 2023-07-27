@@ -1,0 +1,531 @@
+body {
+    background-color: rgb(236, 236, 236);
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+nav {
+    height: 100vh;
+    width: 200px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    position: fixed;
+    top: 0;
+}
+ul {
+    list-style: none;
+    position: relative;
+    left: 20px;
+}
+li {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    margin-top: 20px;
+    padding-left: 35px;
+    left: -90px;
+    position: relative;
+    top: 20px;
+    width: 190px;
+    height: 40px;
+    text-align: start;
+    background-color: rgb(255, 255, 255);
+}
+li:hover {
+    background-color: rgb(236, 236, 236);
+    border-right: 6px solid rgb(117, 117, 117);
+    height: 40px;
+}
+img {
+    margin-top: 20px;
+    width: 180px;
+}
+.btn {
+    position: fixed;
+}
+/*Icons*/
+li.material-icons {
+    font-size: 30px;
+    color: rgb(116, 116, 116);
+}
+div.headerBso {
+    font-size: larger;
+    background-color: rgb(236, 236, 236);
+    position: absolute;
+    top: 375px;
+    width: 1250px;
+    margin-left: 230px;
+    border-radius: 6px;
+    height: 37px;
+}
+/* Стили для скролла */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.input-file span {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    font-size: 14px;
+    vertical-align: middle;
+    color: rgb(117, 117, 117);
+    border-radius: 4px;
+    background-color: rgb(255 255 255);
+    line-height: 22px;
+    height: 37px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: none;
+    margin-left: 10px;
+    transition: background-color 0.2s;
+}
+.input-file input[type="file"] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}
+/* Focus */
+.input-file input[type="file"]:hover + span {
+    color: black;
+}
+/*Модальное окно загрузки файла*/
+.modalLoad {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.modalLoad.active {
+    opacity: 1;
+    pointer-events: all;
+}
+.ReactModal__Content {
+    width: 250px;
+    text-align: center;
+    height: 40px;
+    position: absolute !important;
+    left: 700px !important;
+    top: 400px !important;
+    padding: 5px !important;
+    background-color: rgb(236, 236, 236);
+}
+.ReactModal__Overlay {
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.modalLoadContent {
+    padding: 10px;
+    border-radius: 12px;
+    background-color: rgb(236, 236, 236, 0.9);
+    width: 300px;
+    height: auto;
+    transform: scale(0.5);
+    transition: 0.4s all;
+}
+.modalLoadContent.active {
+    transform: scale(1);
+}
+img.screenShot {
+    margin: 0;
+    padding: 0;
+    width: 310px;
+    height: auto;
+}
+.pHelp {
+    font-size: 17.2px;
+}
+/*БЭМ*/
+/*container*/
+.container {
+    position: absolute;
+    max-width: 1200px;
+    min-width: 800px;
+    left: 230px;
+    top: 80px;
+}
+.container-search {
+    position: fixed;
+    width: 100%;
+    left: 200px;
+    background-color: rgb(236, 236, 236, 0.9);
+    z-index: 100;
+    height: 73px;
+}
+.container-agents-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.container__table {
+    margin-top: 20px;
+}
+.container__table tbody {
+    margin-top: 20px;
+    table-layout: fixed;
+}
+.container__table_status {
+    position: relative;
+    top: -70px;
+    left: 940px;
+    width: 280px;
+}
+.container__input {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 5px;
+    width: 180px;
+}
+.container-search__input {
+    position: relative;
+    top: -2px;
+    left: 200px;
+    height: 18px;
+}
+.container-search__btn {
+    z-index: 100;
+    right: 370px;
+    top: 19px;
+}
+.container-search__btn_back {
+    top: 19px;
+    right: 450px;
+}
+.container__btn {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 5px;
+}
+.container-agents-cards__btn {
+    position: fixed;
+    top: 10px;
+    left: 310px;
+    margin: 5px;
+    z-index: 100;
+    width: 100px;
+}
+.container-agents-cards__select {
+    position: fixed;
+    top: 15px;
+    left: 210px;
+    margin: 5px;
+    z-index: 100;
+}
+.container__input_region {
+    position: absolute;
+    left: -13px;
+    top: -15px;
+    width: 200px;
+    background-color: #ffffff;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 5px 10px;
+    user-select: none;
+    color: black;
+    z-index: 100;
+}
+.container__select {
+    padding: 0;
+    width: 150px;
+}
+
+.container__body td {
+    height: 20px;
+    width: 150px;
+}
+.container__body {
+    overflow-x: auto;
+    height: 500px;
+}
+.container-agent {
+    width: 600px;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+.container__scroll {
+    height: 500px;
+    overflow-x: auto;
+    width: auto;
+    overflow-y: auto;
+}
+
+.container-agent__link {
+    font-size: small;
+    text-decoration: none;
+    font-weight: 600;
+    left: 80px;
+}
+.container__select_small {
+    width: 125px;
+}
+.container-agent__logo {
+    position: absolute;
+    top: 60px;
+    left: 370px;
+}
+
+.container-agent__select {
+    position: absolute;
+    right: 596px;
+}
+.container-agent__p {
+    margin-top: 20px;
+    font-size: small;
+    text-align: start;
+}
+.container-agent__textarea {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+}
+.container__scroll_small table {
+    width: 2000px;
+    font-size: small;
+}
+
+/*table*/
+.table {
+    border: 3px solid #ffffff;
+    border-collapse: collapse;
+    text-align: center;
+}
+.table_none {
+    display: none;
+}
+
+.table th {
+    font-weight: bold;
+    padding: 5px;
+    background-color: #a5f5c3;
+    border: 2px solid #ffffff;
+}
+.table td {
+    padding: 5px;
+    border: 2px solid #ffffff;
+}
+.table tr {
+    height: 20px;
+    position: relative;
+}
+.table__btn {
+    position: relative;
+    margin-left: 10px;
+    top: 0;
+}
+.table__input {
+    text-align: center;
+}
+/*form*/
+.form {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    border-radius: 10px;
+    text-align: start;
+}
+.form__btn {
+    position: relative;
+}
+.form__link {
+    text-decoration: none;
+    color: black;
+}
+.form__p {
+    position: relative;
+    text-align: start;
+    margin-left: 10px;
+}
+.form__btn_small {
+    position: absolute;
+    top: 210px;
+    left: 180px;
+}
+
+.logo {
+    position: absolute;
+    width: 130px;
+}
+.form__logo {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+.form__h3 {
+    position: relative;
+    text-align: center;
+}
+/*link*/
+.link {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    cursor: pointer;
+}
+.link_td {
+    position: absolute;
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    position: relative;
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+    top: 10px;
+}
+.link:hover {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 1) 0%,
+        #a5f5c3 100%
+    );
+    border-radius: 5px;
+}
+.link__navigate {
+    position: absolute;
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    position: relative;
+    bottom: 25px;
+    margin-left: 40px;
+    height: 100%;
+    width: 80%;
+    cursor: pointer;
+}
+/*button*/
+.btn {
+    background-color: #ffffff;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    height: auto;
+    font-weight: bold;
+    color: black;
+}
+.btn_none {
+    display: none;
+}
+.btn:hover {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 1) 0%,
+        #a5f5c3 100%
+    );
+}
+/*input*/
+.input {
+    background-color: #ffffff;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 5px 10px;
+    user-select: none;
+    color: black;
+}
+.input_search {
+    background-color: #ffffff;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 5px 10px;
+    user-select: none;
+    color: black;
+    width: calc(100% - 900px);
+    position: fixed;
+    margin: 20px 230px;
+    z-index: 10;
+}
+.input_none {
+    display: none;
+}
+.input_Agent-Name {
+    user-select: none;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: xx-large;
+}
+.input_large {
+    background-color: #ffffff;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    user-select: none;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+/*select*/
+.select {
+    background-color: none;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    color: black;
+}
+.select_none {
+    display: none;
+}
+.select_large {
+    background-color: none;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    width: 100%;
+}
+h4 {
+    border-bottom: 1px solid black;
+}
+/*other*/
+.redBorder {
+    border: 3px solid red;
+}
+.container__head table thead tr th {
+    top: 0;
+    position: sticky;
+    background-color: #a5f5c3;
+    z-index: 10;
+}
+.container-agent__input {
+    border: 1px solid black;
+    position: absolute;
+    right: 500px;
+    font-weight: bold;
+    text-align: center;
+    margin-right: -50px;
+}
